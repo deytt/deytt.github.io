@@ -1,94 +1,581 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" data-lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Cerqueira</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/efeitos.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="icon" href="assets/android.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Roboto&family=Ubuntu&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO primário -->
+  <title>David Cerqueira — Mobile Software Engineer</title>
+  <meta name="description"
+    content="David Cerqueira — Mobile Software Engineer especialista em Android/Kotlin com atuação em Flutter no setor financeiro. Campinas, SP.">
+  <meta name="author" content="David Cerqueira">
+  <link rel="canonical" href="https://deytt.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deytt.github.io/">
+  <meta property="og:title" content="David Cerqueira — Mobile Software Engineer">
+  <meta property="og:description"
+    content="Android/Kotlin Specialist · Flutter Engineer · Fintech">
+  <meta property="og:image" content="https://deytt.github.io/assets/caricature.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="David Cerqueira — Mobile Software Engineer">
+  <meta name="twitter:description" content="Android/Kotlin Specialist · Flutter Engineer · Fintech">
+  <meta name="twitter:image" content="https://deytt.github.io/assets/caricature.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "David Cerqueira",
+    "jobTitle": "Mobile Software Engineer",
+    "description": "Android/Kotlin Specialist e Flutter Engineer atuando em fintech",
+    "url": "https://deytt.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/dcerquei/",
+      "https://github.com/deytt",
+      "https://www.instagram.com/deytt/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Digio"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Campinas",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "knowsAbout": ["Android", "Kotlin", "Flutter", "Clean Architecture", "Fintech"]
+  }
+  </script>
 </head>
 
 <body>
 
-    <header class="header">
-        <nav class="menu">
-            <ul>
-                <li><a href="#sobre-mim">About me</a></li>
-                <li><a href="assets/david-cerqueira-cv-en.pdf" download>Resume</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ── NAV ──────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__logo" aria-label="David Cerqueira — início">
+        <span class="nav__monogram" aria-hidden="true">DC</span>
+        <span class="nav__brand">David Cerqueira</span>
+      </a>
 
-    <main>
-        <div class="main-info">
-            <img src="assets/perfil3.jpeg" class="profile-pic">
-            <div class="info">
-                <img class="img-icon" src="assets/android.svg" />
-                <h1 class="site-title">David Cerqueira</h1>
-                <h2 class="site-subtitle">Senior Android Engineer</h2>
-            </div>
+      <nav aria-label="Navegação principal">
+        <ul class="nav__links">
+          <li><a href="#sobre" class="t" data-pt="Sobre" data-en="About"></a></li>
+          <li><a href="#especialidades" class="t" data-pt="Especialidades" data-en="Expertise"></a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#trajetoria" class="t" data-pt="Trajetória" data-en="Timeline"></a></li>
+          <li><a href="#contato" class="t" data-pt="Contato" data-en="Contact"></a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Mudar para inglês">
+          <span class="lang-toggle__option lang-toggle__active">PT</span>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <span class="lang-toggle__option lang-toggle__inactive">EN</span>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Abrir menu de navegação"
+          aria-expanded="false" aria-controls="navMobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu móvel -->
+  <div class="nav__mobile" id="navMobile" aria-hidden="true" role="dialog"
+    aria-label="Menu de navegação">
+    <nav>
+      <ul>
+        <li><a href="#sobre" class="t" data-pt="Sobre" data-en="About"></a></li>
+        <li><a href="#especialidades" class="t" data-pt="Especialidades" data-en="Expertise"></a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#trajetoria" class="t" data-pt="Trajetória" data-en="Timeline"></a></li>
+        <li><a href="#contato" class="t" data-pt="Contato" data-en="Contact"></a></li>
+      </ul>
+    </nav>
+    <div class="nav__mobile-footer">
+      <a href="https://www.linkedin.com/in/dcerquei/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/deytt" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+
+  <main id="conteudo-principal">
+
+    <!-- ── HERO ─────────────────────────────────────────── -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+
+        <div class="hero__content">
+          <span class="hero__label" aria-hidden="true">Mobile Software Engineer</span>
+          <h1 class="hero__name" id="hero-title">David Cerqueira</h1>
+          <div class="hero__tagline" role="list" aria-label="Especialidades">
+            <span class="hero__tag hero__tag--android" role="listitem">Android</span>
+            <span class="hero__tag hero__tag--kotlin" role="listitem">Kotlin</span>
+            <span class="hero__tag hero__tag--flutter" role="listitem">Flutter</span>
+            <span class="hero__tag" role="listitem">Fintech</span>
+          </div>
+          <p class="hero__desc t"
+            data-pt="Especialista Android com mais de 10 anos construindo aplicações móveis de alta qualidade. Kotlin no dia a dia, Flutter na pós-graduação e IA aplicada no horizonte — sempre com arquitetura sólida e propósito em cada linha de código."
+            data-en="Android specialist with 10+ years building high-quality mobile applications. Kotlin every day, Flutter in postgraduate projects, and applied AI on the horizon — always with solid architecture and purpose in every line of code.">
+          </p>
+          <div class="hero__cta">
+            <a href="https://www.linkedin.com/in/dcerquei/" class="btn btn--primary"
+              target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#contato" class="btn btn--ghost t"
+              data-pt="Entrar em contato" data-en="Get in touch"></a>
+          </div>
         </div>
-    </main>
 
-    <section id="sobre-mim">
-        <div class="sobre-mim">
-            <h1>About me</h1>
-
-            <p>Senior Android Engineer with nearly 10 years of experience delivering high-quality native Android applications in complex, large-scale environments.
-            </p>
-            <p>Strong background in modern Android development using Kotlin and Jetpack, with a focus on scalable architectures (MVVM, Clean Architecture), app modularization, asynchronous programming with coroutines and Flow, and automated testing strategies.
-            </p>
-            <p>Extensive experience working on mission-critical applications with a large user base, addressing performance, scalability, security, and long-term maintainability. Proven ability to refactor and modernize legacy codebases while ensuring stability in production environments.
-            </p>
-            <p>Currently leading the Android technical efforts for the Open Finance domain at Banco Digio, implementing Central Bank regulatory requirements and collaborating closely with backend, product, security, and compliance teams in a highly regulated fintech environment.
-            </p>
-            <p>Former Tech Lead, with strong ownership of technical decisions, architectural direction, and mentoring of engineers. Comfortable working in distributed teams and async-first environments.
-            </p>
-            <p>Core Competencies: Android Development (Kotlin) • Mobile Architecture (MVVM / Clean Architecture) • Scalable & Modular Mobile Applications • Fintech / Open Finance • Technical Leadership
-            </p>
-
-            <img src="assets/master-race.gif" />
+        <div class="hero__image-wrap" aria-hidden="true">
+          <img src="assets/caricature.png"
+            alt="Ilustração de David Cerqueira em seu setup de desenvolvimento mobile"
+            class="hero__image" width="720" height="510" loading="eager"
+            fetchpriority="high">
         </div>
+
+      </div>
     </section>
 
+    <!-- ── SOBRE ─────────────────────────────────────────── -->
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title t" id="sobre-title"
+            data-pt="Sobre mim" data-en="About me"></h2>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <div class="about__grid">
+          <div class="about__text">
+            <p class="t"
+              data-pt="Comecei minha trajetória no desenvolvimento mobile com Android nativo em Kotlin, construindo uma base sólida em arquitetura de software e boas práticas de engenharia. Ao longo dos anos, atuei em empresas dos setores de energia, varejo de grande escala e fintech, sempre entregando aplicações usadas por milhões de pessoas."
+              data-en="I started my journey in mobile development with native Android in Kotlin, building a strong foundation in software architecture and engineering best practices. Over the years, I worked across energy, large-scale retail, and fintech companies, consistently delivering applications used by millions of people.">
+            </p>
+            <p class="t"
+              data-pt="Hoje, como Desenvolvedor Android Sênior no Digio, lidero a frente técnica de Open Finance — área regulada pelo Banco Central — em colaboração com times de produto, backend, segurança e compliance. Kotlin é minha linguagem do dia a dia e o centro da minha atuação profissional."
+              data-en="Today, as a Senior Android Engineer at Digio, I lead the technical efforts for Open Finance — regulated by Brazil's Central Bank — in close collaboration with product, backend, security, and compliance teams. Kotlin is my everyday language and the core of my professional work.">
+            </p>
+            <p class="t"
+              data-pt="Em paralelo, curso a pós-graduação em Engenharia Front-end com parte da grade fortemente voltada ao ecossistema mobile: Flutter, Dart, gerenciamento de estado, Clean Architecture, performance, segurança em apps, publicação nas lojas e pipelines de CI/CD com GitHub Actions. Uma formação que reforça e complementa diretamente o que pratico no dia a dia como engenheiro Android."
+              data-en="In parallel, I am pursuing a postgraduate degree in Front-end Engineering, with part of the curriculum heavily focused on the mobile ecosystem: Flutter, Dart, state management, Clean Architecture, app performance, mobile security, store publishing, and CI/CD pipelines with GitHub Actions. A program that directly reinforces and complements what I practice every day as an Android engineer.">
+            </p>
+          </div>
+          <div class="about__photo">
+            <img src="assets/photo.png"
+              alt="David Cerqueira, Mobile Software Engineer"
+              class="about__img" width="260" height="340" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer">
-        <ul>
-            <li>
-                <a href="https://github.com/deytt" target="_blank">
-                    <img class="img-icon" src="assets/github.svg" />
-                    <span>GitHub</span>
-                </a>
-            </li>
-<!--            <li>-->
-<!--                <a href="" target="_blank">-->
-<!--                    <img class="img-icon" src="assets/twitter.svg" />-->
-<!--                    <span>Twitter</span>-->
-<!--                </a>-->
-<!--            </li>-->
+    <!-- ── ESPECIALIDADES ─────────────────────────────────── -->
+    <section class="section section--alt" id="especialidades"
+      aria-labelledby="especialidades-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title t" id="especialidades-title"
+            data-pt="Especialidades" data-en="Expertise"></h2>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <div class="expertise__grid">
 
-            <li>
-                <a href="https://www.linkedin.com/in/dcerquei/" target="_blank">
-                    <img class="img-icon" src="assets/linkedin.svg" />
-                    <span>LinkedIn</span>
-                </a>
-            </li>
-<!--            <li>-->
-<!--                <a href="" target="_blank">-->
-<!--                    <img class="img-icon" src="assets/medium.svg" />-->
-<!--                    <span>Medium</span>-->
-<!--                </a>-->
-<!--            </li>-->
-        </ul>
-    </footer>
+          <article class="expertise__card">
+            <div class="expertise__icon expertise__icon--android" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.6 11.8 19 9.3a.5.5 0 0 0-.9-.5l-1.4 2.6A8.1 8.1 0 0 0 12 10.5c-1.9 0-3.7.7-5 1.9L5.7 8.8a.5.5 0 0 0-.9.5l1.4 2.5A8.2 8.2 0 0 0 4 17h16c0-2-.7-3.8-2.4-5.2zM9 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+              </svg>
+            </div>
+            <h3>Android Engineering</h3>
+            <p class="t"
+              data-pt="Desenvolvimento nativo Android com Kotlin e Java. Jetpack Compose, arquiteturas escaláveis, modularização e performance em aplicações financeiras de alto tráfego."
+              data-en="Native Android development with Kotlin and Java. Jetpack Compose, scalable architectures, modularization, and performance in high-traffic financial applications.">
+            </p>
+          </article>
 
+          <article class="expertise__card">
+            <div class="expertise__icon expertise__icon--flutter" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.25 2 5.5 10.75l2.83 2.83 11.59-11.58H14.25zM14.24 13.41l-2.83 2.83 2.83 2.83 2.83-2.83-2.83-2.83zM8.33 13.58 5.5 16.41l2.83 2.83 2.83-2.83-2.83-2.83z"/>
+              </svg>
+            </div>
+            <h3>Flutter Development</h3>
+            <p class="t"
+              data-pt="Desenvolvimento com Flutter e Dart aplicado a projetos acadêmicos e exploração multiplataforma. Integração com o ecossistema Figma — Figma Make, Figma Design e MCP do Figma via Cursor — para construir telas de apps diretamente a partir de protótipos."
+              data-en="Flutter and Dart applied to academic projects and cross-platform exploration. Integration with the Figma ecosystem — Figma Make, Figma Design, and Figma MCP via Cursor — to build app screens directly from prototypes.">
+            </p>
+          </article>
+
+          <article class="expertise__card">
+            <div class="expertise__icon expertise__icon--arch" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"/>
+              </svg>
+            </div>
+            <h3 class="t" data-pt="Arquitetura de Software" data-en="Software Architecture"></h3>
+            <p class="t"
+              data-pt="Clean Architecture, MVVM, princípios SOLID, modularização e design patterns. Foco em código sustentável, testável e preparado para crescer."
+              data-en="Clean Architecture, MVVM, SOLID principles, modularization, and design patterns. Focus on sustainable, testable, and scalable code.">
+            </p>
+          </article>
+
+          <article class="expertise__card">
+            <div class="expertise__icon expertise__icon--fintech" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"/>
+              </svg>
+            </div>
+            <h3>Fintech &amp; Open Finance</h3>
+            <p class="t"
+              data-pt="Implementação de requisitos regulatórios do Banco Central em Open Finance. Colaboração com times de segurança e compliance em ambientes altamente regulados."
+              data-en="Implementation of Central Bank regulatory requirements in Open Finance. Collaboration with security and compliance teams in highly regulated financial environments.">
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STACK ──────────────────────────────────────────── -->
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" id="stack-title">Stack</h2>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <div class="stack__grid">
+
+          <div class="stack__group">
+            <h3 class="stack__group-title">Core Mobile</h3>
+            <ul class="stack__list" aria-label="Core Mobile">
+              <li><span class="stack__badge stack__badge--android">Android</span></li>
+              <li><span class="stack__badge stack__badge--kotlin">Kotlin</span></li>
+              <li><span class="stack__badge">Java</span></li>
+              <li><span class="stack__badge stack__badge--flutter">Flutter</span></li>
+              <li><span class="stack__badge">Dart</span></li>
+              <li><span class="stack__badge">Jetpack</span></li>
+              <li><span class="stack__badge">Compose</span></li>
+            </ul>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title t"
+              data-pt="Arquitetura" data-en="Architecture"></h3>
+            <ul class="stack__list" aria-label="Arquitetura">
+              <li><span class="stack__badge">Clean Architecture</span></li>
+              <li><span class="stack__badge">MVVM</span></li>
+              <li><span class="stack__badge">Modularization</span></li>
+              <li><span class="stack__badge">SOLID</span></li>
+              <li><span class="stack__badge">Design Patterns</span></li>
+              <li><span class="stack__badge">DDD</span></li>
+            </ul>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title t"
+              data-pt="Dados &amp; Concorrência" data-en="Data &amp; Concurrency"></h3>
+            <ul class="stack__list" aria-label="Dados e Concorrência">
+              <li><span class="stack__badge">Coroutines</span></li>
+              <li><span class="stack__badge">Flow</span></li>
+              <li><span class="stack__badge">RxJava</span></li>
+              <li><span class="stack__badge">Retrofit</span></li>
+              <li><span class="stack__badge">Room</span></li>
+              <li><span class="stack__badge">SQLite</span></li>
+              <li><span class="stack__badge">REST APIs</span></li>
+            </ul>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title t"
+              data-pt="Qualidade" data-en="Quality"></h3>
+            <ul class="stack__list" aria-label="Qualidade">
+              <li><span class="stack__badge">Unit Testing</span></li>
+              <li><span class="stack__badge">JUnit</span></li>
+              <li><span class="stack__badge">Mockito</span></li>
+              <li><span class="stack__badge">MockK</span></li>
+              <li><span class="stack__badge">Code Review</span></li>
+              <li><span class="stack__badge">TDD</span></li>
+            </ul>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title">Platform &amp; DevOps</h3>
+            <ul class="stack__list" aria-label="Platform e DevOps">
+              <li><span class="stack__badge">Gradle</span></li>
+              <li><span class="stack__badge">Firebase</span></li>
+              <li><span class="stack__badge">GitHub Actions</span></li>
+              <li><span class="stack__badge">GitLab CI/CD</span></li>
+              <li><span class="stack__badge">Bitrise</span></li>
+              <li><span class="stack__badge">Git / Git-Flow</span></li>
+              <li><span class="stack__badge">Fastlane</span></li>
+            </ul>
+          </div>
+
+          <div class="stack__group">
+            <h3 class="stack__group-title">DI &amp; Tools</h3>
+            <ul class="stack__list" aria-label="DI e Ferramentas">
+              <li><span class="stack__badge">Koin</span></li>
+              <li><span class="stack__badge">Dagger</span></li>
+              <li><span class="stack__badge">Android Studio</span></li>
+              <li><span class="stack__badge">IntelliJ</span></li>
+              <li><span class="stack__badge">Figma</span></li>
+              <li><span class="stack__badge">Cursor</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TRAJETÓRIA ─────────────────────────────────────── -->
+    <section class="section section--alt" id="trajetoria"
+      aria-labelledby="trajetoria-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title t" id="trajetoria-title"
+            data-pt="Trajetória" data-en="Timeline"></h2>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+
+        <ol class="timeline" aria-label="Experiência profissional">
+          <li class="timeline__item timeline__item--current">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__body">
+              <time class="timeline__period">
+                2021 – <span class="t" data-pt="Presente" data-en="Present"></span>
+              </time>
+              <h3 class="timeline__role">Senior Android Engineer</h3>
+              <span class="timeline__company">
+                Digio / GO.K ·
+                <span class="t" data-pt="Campinas, SP" data-en="Campinas, SP"></span>
+              </span>
+              <p class="timeline__desc t"
+                data-pt="Liderança técnica em Open Finance — área regulada pelo Banco Central — nos aplicativos Banco Digio e Uber Conta. Kotlin, Clean Architecture, modularização, Coroutines, Firebase e CI/CD em ambiente fintech de alta escala."
+                data-en="Technical lead for Open Finance — regulated by Brazil's Central Bank — in Banco Digio and Uber Conta apps. Kotlin, Clean Architecture, modularization, Coroutines, Firebase, and CI/CD in a high-scale fintech environment.">
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__body">
+              <time class="timeline__period">Set – Dez 2021</time>
+              <h3 class="timeline__role">Tech Lead</h3>
+              <span class="timeline__company">
+                Capgemini ·
+                <span class="t" data-pt="Campinas, SP" data-en="Campinas, SP"></span>
+              </span>
+              <p class="timeline__desc t"
+                data-pt="Liderança técnica nos aplicativos de varejo Via (Casas Bahia, Extra, Ponto). Desenho de solução, levantamento de riscos e gestão de escopo técnico."
+                data-en="Technical leadership on Via retail apps (Casas Bahia, Extra, Ponto). Solution design, risk assessment, and technical scope management.">
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__body">
+              <time class="timeline__period">2019 – 2021</time>
+              <h3 class="timeline__role">Android Developer</h3>
+              <span class="timeline__company">
+                Kaffa Mobile ·
+                <span class="t" data-pt="Campinas, SP" data-en="Campinas, SP"></span>
+              </span>
+              <p class="timeline__desc t"
+                data-pt="Desenvolvimento em projetos para o setor de energia (Elektro, CPFL, Enel, EDP). Kotlin, Java, APIs REST, CI/CD e testes unitários."
+                data-en="Development on projects for the energy sector (Elektro, CPFL, Enel, EDP). Kotlin, Java, REST APIs, CI/CD, and unit testing.">
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__body">
+              <time class="timeline__period">2017 – 2019</time>
+              <h3 class="timeline__role t"
+                data-pt="Estágio — Desenvolvimento de Software"
+                data-en="Software Development Intern"></h3>
+              <span class="timeline__company">Kaffa Mobile</span>
+              <p class="timeline__desc t"
+                data-pt="Sustentação e desenvolvimento de novas funcionalidades. Integração com sistemas SAP e GIS. Primeiros passos com Java, Kotlin e metodologias ágeis."
+                data-en="Maintenance and new feature development. Integration with SAP and GIS systems. First steps with Java, Kotlin, and agile methodologies.">
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="education" aria-labelledby="education-title">
+          <h3 class="education__title t" id="education-title"
+            data-pt="Formação" data-en="Education"></h3>
+          <div class="education__grid">
+            <div class="education__item">
+              <time class="education__period">2025 – 2026</time>
+              <p class="education__course t"
+                data-pt="Pós-graduação em Front-end Engineering"
+                data-en="Postgraduate in Front-end Engineering"></p>
+              <span class="education__school">FIAP</span>
+            </div>
+            <div class="education__item">
+              <time class="education__period">2017 – 2021</time>
+              <p class="education__course t"
+                data-pt="Bacharelado em Ciência da Computação"
+                data-en="Bachelor of Computer Science"></p>
+              <span class="education__school">UNIP</span>
+            </div>
+            <div class="education__item">
+              <time class="education__period">2015 – 2017</time>
+              <p class="education__course t"
+                data-pt="Técnico em Informática"
+                data-en="Technical Degree in Computing"></p>
+              <span class="education__school">SENAI Zerbini</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── FILOSOFIA ──────────────────────────────────────── -->
+    <section class="section philosophy" id="filosofia" aria-labelledby="filosofia-title">
+      <div class="container">
+        <h2 class="sr-only" id="filosofia-title">
+          <span class="t" data-pt="Filosofia" data-en="Philosophy"></span>
+        </h2>
+        <blockquote class="philosophy__quote">
+          <p class="t"
+            data-pt="Tecnologia só faz sentido quando gera impacto real para quem a utiliza."
+            data-en="Technology only makes sense when it generates real impact for those who use it.">
+          </p>
+          <cite class="t" data-pt="Princípio que guia meu trabalho." data-en="The principle that guides my work."></cite>
+        </blockquote>
+        <div class="philosophy__values" role="list">
+          <div class="philosophy__value" role="listitem">
+            <span class="philosophy__icon" aria-hidden="true">⚡</span>
+            <h3 class="t" data-pt="Qualidade" data-en="Quality"></h3>
+            <p class="t"
+              data-pt="Código limpo, testável e sustentável"
+              data-en="Clean, testable, and sustainable code"></p>
+          </div>
+          <div class="philosophy__value" role="listitem">
+            <span class="philosophy__icon" aria-hidden="true">🏛</span>
+            <h3 class="t" data-pt="Arquitetura" data-en="Architecture"></h3>
+            <p class="t"
+              data-pt="Decisões que resistem ao tempo"
+              data-en="Decisions that stand the test of time"></p>
+          </div>
+          <div class="philosophy__value" role="listitem">
+            <span class="philosophy__icon" aria-hidden="true">🤝</span>
+            <h3 class="t" data-pt="Colaboração" data-en="Collaboration"></h3>
+            <p class="t"
+              data-pt="Times que crescem juntos"
+              data-en="Teams that grow together"></p>
+          </div>
+          <div class="philosophy__value" role="listitem">
+            <span class="philosophy__icon" aria-hidden="true">🎯</span>
+            <h3 class="t" data-pt="Impacto" data-en="Impact"></h3>
+            <p class="t"
+              data-pt="Software com propósito real"
+              data-en="Software with real purpose"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTATO ────────────────────────────────────────── -->
+    <section class="section section--alt" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title t" id="contato-title"
+            data-pt="Vamos conversar?" data-en="Let's talk?"></h2>
+          <span class="section__line" aria-hidden="true"></span>
+        </div>
+        <p class="contact__desc t"
+          data-pt="Aberto a conversas sobre oportunidades, projetos ou simplesmente para trocar ideias sobre mobile, arquitetura e engenharia de software."
+          data-en="Open to conversations about opportunities, projects, or just talking about mobile, architecture, and software engineering.">
+        </p>
+        <nav class="contact__links" aria-label="Links de contato">
+          <a href="https://www.linkedin.com/in/dcerquei/" class="contact__link"
+            target="_blank" rel="noopener noreferrer">
+            <img src="assets/linkedin.svg" alt="" aria-hidden="true" width="22" height="22">
+            <span>LinkedIn</span>
+            <svg class="contact__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://github.com/deytt" class="contact__link"
+            target="_blank" rel="noopener noreferrer">
+            <img src="assets/github.svg" alt="" aria-hidden="true" width="22" height="22">
+            <span>GitHub</span>
+            <svg class="contact__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/deytt/" class="contact__link"
+            target="_blank" rel="noopener noreferrer">
+            <img src="assets/instagram.svg" alt="" aria-hidden="true" width="22" height="22">
+            <span>Instagram</span>
+            <svg class="contact__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="assets/david-cerqueira-cv-en.pdf" class="contact__link" download
+            aria-label="Baixar currículo em PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              width="22" height="22" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/>
+            </svg>
+            <span class="t" data-pt="Baixar currículo" data-en="Download resume"></span>
+            <svg class="contact__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__copy">© 2026 David Cerqueira</span>
+      <span class="footer__tag t"
+        data-pt="Construindo com propósito."
+        data-en="Building with purpose."></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
